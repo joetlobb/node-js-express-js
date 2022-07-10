@@ -4,3 +4,5 @@ alternatives to express.js
     3. koa
     4. sails.js
 
+body-parser
+    npm install --save body-parser
