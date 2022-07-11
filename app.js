@@ -12,7 +12,10 @@ app.use("/add-product", (req, res, next) => {
   );
 });
 
-app.use("/product", (req, res, next) => {
+// app.get()
+// app.post() if use app post, the following middleware will not get execute when enter /product because it's a GET req
+// but if /add-product is entered the method is POST, then the following middleware will get execute
+app.post("/product", (req, res, next) => {
   console.log(req.body);
   res.redirect("/");
 });
