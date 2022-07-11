@@ -10,7 +10,8 @@ const products = [];
 // same as using app.use() app.get() app.post()
 // path is now /admin/add-product (GET)
 router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  // res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  res.render("add-product", { pageTitle: "Add Product" });
 });
 
 // path is now /admin/add-product (POST)
