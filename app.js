@@ -4,14 +4,14 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const adminRoute = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoute = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // specify /admin in front of the route to use /admin/...
-app.use("/admin", adminRoute);
+app.use("/admin", adminData.routes);
 app.use(shopRoute);
 
 app.use((req, res, next) => {
